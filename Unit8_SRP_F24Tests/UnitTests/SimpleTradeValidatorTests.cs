@@ -136,6 +136,20 @@ public class SimpleTradeValidatorTests
         //Assert
         Assert.IsFalse(result);
     }
+    [TestMethod()]
+    public void TestEmptyCurrencyString()
+    {
+        //Arrange
+        var logger = new ConsoleLogger();
+        var tradeValidator = new SimpleTradeValidator(logger);
+        string[] strData = { "", "4444", "1.00" };
+
+        //Act
+        bool result = tradeValidator.ValidateTradeData(strData, 1);
+
+        //Assert
+        Assert.IsFalse(result);
+    }
 
 
 
