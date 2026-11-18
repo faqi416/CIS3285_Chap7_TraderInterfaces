@@ -1,5 +1,4 @@
 using System;
-using System.Security;
 using Unit8_SRP_F24.Contracts;
 
 namespace Unit8_SRP_F24;
@@ -23,7 +22,7 @@ public class ConsoleLogger : ILogger
 
         using (StreamWriter logfile = File.AppendText(logFile))
         {
-            logfile.WriteLine("<log><type>" + type + "</type><message>" + SecurityElement.Escape(text) + "</message></log>");
+            logfile.WriteLine("<log><type>" + type + "</type><message>" + text + "</message></log>");
         }
     }
 }
